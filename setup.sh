@@ -4,7 +4,7 @@ cd ~
 echo "password for user patrick"
 adduser -q patrick
 apt install sudo
-usermod -aG sudo edman
+usermod -aG sudo patrick
 
 # install basic tools
 apt install -y mosh sudo vim tmux zsh unattended-upgrades fail2ban htop curl wget ufw stow git
