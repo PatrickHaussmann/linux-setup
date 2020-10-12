@@ -7,7 +7,7 @@ apt install sudo
 usermod -aG sudo patrick
 
 # install basic tools
-apt install -y mosh sudo vim tmux zsh unattended-upgrades fail2ban htop curl wget ufw stow git
+apt install -y mosh sudo vim tmux unattended-upgrades fail2ban htop curl wget ufw stow git #zsh
 apt autoremove -y
 
 # ssh settings
@@ -53,7 +53,12 @@ for x in */; do stow \$x; done
 
 ---------------------------
 """
+# jekyll
+apt install -y ruby-full build-essential
+gem install bundler jekyll
+
+
 
 # should be last (because it exits this script)
 # ohmyzsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
