@@ -15,7 +15,7 @@ echo -e "\nPermitRootLogin no\nPort 4863\nClientAliveInterval 360\nClientAliveCo
 service sshd restart
 
 # dotfiles
-git clone https://github.com/PatrickHaussmann/dotfiles.git
+git clone --recursive https://github.com/PatrickHaussmann/dotfiles.git
 
 # unattended-upgrades
 echo unattended-upgrades unattended-upgrades/enable_auto_updates boolean true | sudo debconf-set-selections
@@ -34,6 +34,25 @@ ufw allow https comment 'https'
 ufw allow mosh comment 'mosh'
 ufw enable
 
+echo """
+---------------------------
+dotfiles:
+
+
+# Back up/delete any conflicts, if a system has files in place already. The stow dry run command will produce errors if files would conflict:
+
+# From the dotfiles dir
+for x in */; do stow -n $x; done
+
+
+# Stow makes symlinking everything easy:
+
+# From the dotfiles dir
+for x in */; do stow $x; done
+
+
+---------------------------
+"""
 
 # should be last (because it exits this script)
 # ohmyzsh
