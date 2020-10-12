@@ -15,7 +15,7 @@ echo "\nPermitRootLogin no\nPort 4863\nClientAliveInterval 360\nClientAliveCount
 service sshd restart
 
 # dotfiles
-git clone --recursive https://github.com/PatrickHaussmann/dotfiles.git
+git clone --recursive https://github.com/PatrickHaussmann/dotfiles.git /home/patrick/dotfiles
 
 # unattended-upgrades
 echo unattended-upgrades unattended-upgrades/enable_auto_updates boolean true | sudo debconf-set-selections
