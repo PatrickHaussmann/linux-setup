@@ -15,9 +15,6 @@ apt autoremove -y
 #echo -e "\nPort 4863\nClientAliveInterval 360\nClientAliveCountMax 0\nPermitEmptyPasswords no\nAllowUsers patrick\nProtocol 2\nMaxAuthTries 3" | tee -a  /etc/ssh/sshd_config
 #/etc/init.d/ssh restart
 
-# ohmyzsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 # dotfiles
 git clone https://github.com/PatrickHaussmann/dotfiles.git
 
@@ -37,3 +34,8 @@ ufw allow http comment 'http'
 ufw allow https comment 'https'
 ufw allow mosh comment 'mosh'
 ufw enable
+
+
+# should be last (because it exits this script)
+# ohmyzsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
