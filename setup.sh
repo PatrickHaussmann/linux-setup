@@ -42,13 +42,13 @@ dotfiles:
 # Back up/delete any conflicts, if a system has files in place already. The stow dry run command will produce errors if files would conflict:
 
 # From the dotfiles dir
-for x in */; do stow -n $x; done
+for x in */; do stow -n \$x; done
 
 
 # Stow makes symlinking everything easy:
 
 # From the dotfiles dir
-for x in */; do stow $x; done
+for x in */; do stow \$x; done
 
 
 ---------------------------
