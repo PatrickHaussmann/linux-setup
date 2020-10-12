@@ -7,7 +7,7 @@ apt install sudo
 usermod -aG sudo edman
 
 # install basic tools
-apt install -y mosh sudo vim tmux zsh unattended-upgrades fail2ban htop curl wget ufw
+apt install -y mosh sudo vim tmux zsh unattended-upgrades fail2ban htop curl wget ufw stow git
 apt autoremove -y
 
 # ssh settings
