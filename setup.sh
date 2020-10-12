@@ -11,8 +11,8 @@ apt install -y mosh sudo vim tmux zsh unattended-upgrades fail2ban htop curl wge
 apt autoremove -y
 
 # ssh settings
-#echo -e "\nPermitRootLogin no\nPort 4863\nClientAliveInterval 360\nClientAliveCountMax 0\nPermitEmptyPasswords no\nAllowUsers patrick\nProtocol 2\nMaxAuthTries 3" | tee -a  /etc/ssh/sshd_config
-#service sshd restart
+echo "\nPermitRootLogin no\nPort 4863\nClientAliveInterval 360\nClientAliveCountMax 0\nPermitEmptyPasswords no\nAllowUsers patrick\nProtocol 2\nMaxAuthTries 3" | tee -a  /etc/ssh/sshd_config
+service sshd restart
 
 # dotfiles
 git clone --recursive https://github.com/PatrickHaussmann/dotfiles.git
