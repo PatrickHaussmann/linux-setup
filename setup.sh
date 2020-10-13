@@ -32,7 +32,7 @@ ufw allow 4863/tcp comment 'ssh'
 ufw allow http comment 'http'
 ufw allow https comment 'https'
 ufw allow mosh comment 'mosh'
-ufw enable
+ufw --force enable
 
 echo """
 ---------------------------
