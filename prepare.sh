@@ -1,3 +1,5 @@
+# change root password and delete default user
+
 apt update && apt upgrade -y
 
 apt install -y curl locales
