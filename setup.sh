@@ -22,7 +22,7 @@ echo unattended-upgrades unattended-upgrades/enable_auto_updates boolean true | 
 sudo dpkg-reconfigure -f noninteractive unattended-upgrades
 
 # allow cron
-echo -e "root\npatrick" | sudo tee -a  /etc/cron.d/cron.allow
+echo "root\npatrick" | sudo tee -a  /etc/cron.d/cron.allow
 
 # uninstall not needed tools
 apt purge xinetd nis yp-tools tftpd atftpd tftpd-hpa telnetd rsh-server rsh-redone-server -y
