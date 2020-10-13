@@ -14,9 +14,6 @@ apt autoremove -y
 echo "\nPermitRootLogin no\nPort 4863\nClientAliveInterval 360\nClientAliveCountMax 0\nPermitEmptyPasswords no\nAllowUsers patrick\nProtocol 2\nMaxAuthTries 3" | tee -a  /etc/ssh/sshd_config
 service sshd restart
 
-# dotfiles
-git clone --recursive https://github.com/PatrickHaussmann/dotfiles.git /home/patrick/dotfiles
-
 # unattended-upgrades
 echo unattended-upgrades unattended-upgrades/enable_auto_updates boolean true | sudo debconf-set-selections
 sudo dpkg-reconfigure -f noninteractive unattended-upgrades
@@ -33,6 +30,12 @@ ufw allow http comment 'http'
 ufw allow https comment 'https'
 ufw allow mosh comment 'mosh'
 ufw --force enable
+
+# dotfiles
+git clone --recursive https://github.com/PatrickHaussmann/dotfiles.git /home/patrick/dotfiles
+mv /home/patrick/.bashrc /home/patrick/.bashrc.old
+patrick@raspberrypi:~ $ cd /home/patrick/dotfiles/
+for x in */; do stow $x; done
 
 echo """
 ---------------------------
@@ -53,11 +56,10 @@ for x in */; do stow \$x; done
 
 ---------------------------
 """
+
 # jekyll
 apt install -y ruby-full build-essential
 gem install bundler jekyll
-
-
 
 # should be last (because it exits this script)
 # ohmyzsh
