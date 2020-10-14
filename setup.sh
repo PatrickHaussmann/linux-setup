@@ -32,10 +32,10 @@ ufw allow mosh comment 'mosh'
 ufw --force enable
 
 # dotfiles
-git clone --recursive https://github.com/PatrickHaussmann/dotfiles.git /home/patrick/dotfiles
-mv /home/patrick/.bashrc /home/patrick/.bashrc.old
+sudo -u patrick git clone --recursive https://github.com/PatrickHaussmann/dotfiles.git /home/patrick/dotfiles
+sudo -u patrick mv /home/patrick/.bashrc /home/patrick/.bashrc.old
 cd /home/patrick/dotfiles/
-for x in */; do stow $x; done
+for x in */; do sudo -u patrick stow $x; done
 
 # jekyll
 apt install -y ruby-full build-essential
