@@ -34,7 +34,7 @@ ufw --force enable
 # dotfiles
 git clone --recursive https://github.com/PatrickHaussmann/dotfiles.git /home/patrick/dotfiles
 mv /home/patrick/.bashrc /home/patrick/.bashrc.old
-patrick@raspberrypi:~ $ cd /home/patrick/dotfiles/
+cd /home/patrick/dotfiles/
 for x in */; do stow $x; done
 
 # jekyll
