@@ -1,5 +1,4 @@
 # change root password
-# delete default user (userdel -r pi)
 
 apt update && apt upgrade -y
 

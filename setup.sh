@@ -7,7 +7,7 @@ apt install sudo
 usermod -aG sudo patrick
 
 # install basic tools
-apt install -y mosh sudo vim tmux unattended-upgrades fail2ban htop curl wget ufw stow git #zsh
+apt install -y mosh sudo vim tmux unattended-upgrades fail2ban htop curl wget ufw stow git
 apt autoremove -y
 
 # ssh settings
@@ -37,30 +37,24 @@ mv /home/patrick/.bashrc /home/patrick/.bashrc.old
 patrick@raspberrypi:~ $ cd /home/patrick/dotfiles/
 for x in */; do stow $x; done
 
+# jekyll
+apt install -y ruby-full build-essential
+gem install bundler jekyll
+
 echo """
 ---------------------------
 dotfiles:
 
-
 # Back up/delete any conflicts, if a system has files in place already. The stow dry run command will produce errors if files would conflict:
-
 # From the dotfiles dir
 for x in */; do stow -n \$x; done
-
 
 # Stow makes symlinking everything easy:
 
 # From the dotfiles dir
 for x in */; do stow \$x; done
 
-
+# todo manual:
+# delete default user (userdel -r pi)
 ---------------------------
 """
-
-# jekyll
-apt install -y ruby-full build-essential
-gem install bundler jekyll
-
-# should be last (because it exits this script)
-# ohmyzsh
-#sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
