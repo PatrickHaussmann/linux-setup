@@ -37,7 +37,7 @@ sudo -u patrick mv /home/patrick/.bashrc /home/patrick/.bashrc.old
 cd /home/patrick/dotfiles/
 for x in */; do sudo -u patrick stow $x; done
 
-# npm
+# install npm
 curl -sSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
 VERSION=node_14.x
 DISTRO="$(lsb_release -s -c)"
@@ -46,7 +46,10 @@ echo "deb-src https://deb.nodesource.com/$VERSION $DISTRO main" | tee -a /etc/ap
 apt update
 apt install nodejs
 
-# jekyll
+# install prettier
+npm install -g prettier
+
+# install jekyll
 apt install -y ruby-full build-essential
 gem install bundler jekyll
 
