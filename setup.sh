@@ -15,11 +15,11 @@ echo "\nPermitRootLogin no\nPort 4863\nClientAliveInterval 360\nClientAliveCount
 service sshd restart
 
 # unattended-upgrades
-echo unattended-upgrades unattended-upgrades/enable_auto_updates boolean true | sudo debconf-set-selections
+echo unattended-upgrades unattended-upgrades/enable_auto_updates boolean true | debconf-set-selections
 sudo dpkg-reconfigure -f noninteractive unattended-upgrades
 
 # allow cron
-echo "root\npatrick" | sudo tee -a  /etc/cron.d/cron.allow
+echo "root\npatrick" | tee -a  /etc/cron.d/cron.allow
 
 # uninstall not needed tools
 apt purge xinetd nis yp-tools tftpd atftpd tftpd-hpa telnetd rsh-server rsh-redone-server -y
@@ -38,11 +38,11 @@ cd /home/patrick/dotfiles/
 for x in */; do sudo -u patrick stow $x; done
 
 # npm
-curl -sSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
+curl -sSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
 VERSION=node_14.x
 DISTRO="$(lsb_release -s -c)"
-echo "deb https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee /etc/apt/sources.list.d/nodesource.list
-echo "deb-src https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee -a /etc/apt/sources.list.d/nodesource.list
+echo "deb https://deb.nodesource.com/$VERSION $DISTRO main" | tee /etc/apt/sources.list.d/nodesource.list
+echo "deb-src https://deb.nodesource.com/$VERSION $DISTRO main" | tee -a /etc/apt/sources.list.d/nodesource.list
 apt update
 apt install nodejs
 
