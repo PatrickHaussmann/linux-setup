@@ -10,4 +10,4 @@ export LC_ALL=en_US.UTF-8
 locale-gen en_US.UTF-8
 locale-gen en_GB.UTF-8
 
-sh -c "$(curl -fsSL https://gist.githubusercontent.com/PatrickHaussmann/272a57ab436d810d81bd45972a567d6e/raw/setup.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/PatrickHaussmann/linux-setup/master/setup.sh)"
