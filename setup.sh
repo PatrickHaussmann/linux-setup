@@ -7,7 +7,7 @@ apt install sudo
 usermod -aG sudo patrick
 
 # install basic tools
-apt install -y mosh sudo neovim tmux unattended-upgrades fail2ban htop curl wget ufw stow git
+apt install -y mosh sudo vim tmux unattended-upgrades fail2ban htop curl wget ufw stow git httpie
 apt autoremove -y
 
 # ssh settings
