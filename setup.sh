@@ -31,11 +31,15 @@ ufw allow https comment 'https'
 ufw allow mosh comment 'mosh'
 ufw --force enable
 
+# create folder
+mkdir github
+
 # dotfiles
 sudo -u patrick git clone --recursive https://github.com/PatrickHaussmann/dotfiles.git /home/patrick/dotfiles
 sudo -u patrick mv /home/patrick/.bashrc /home/patrick/.bashrc.old
 cd /home/patrick/dotfiles/
 for x in */; do sudo -u patrick stow $x; done
+cd ..
 
 # install npm
 curl -sSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
