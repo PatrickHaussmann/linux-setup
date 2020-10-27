@@ -26,8 +26,8 @@ apt purge xinetd nis yp-tools tftpd atftpd tftpd-hpa telnetd rsh-server rsh-redo
 
 # ufw
 ufw allow 4863/tcp comment 'ssh'
-ufw allow http comment 'http'
-ufw allow https comment 'https'
+#ufw allow http comment 'http'
+#ufw allow https comment 'https'
 ufw allow mosh comment 'mosh'
 ufw --force enable
 
