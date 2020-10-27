@@ -58,7 +58,7 @@ npm install -g prettier
 
 # python3
 apt install python3 python3-pip
-pip3 install numpy pandas requests matplotlib scipy seaborn sympy
+sudo -u patrick pip3 install numpy pandas requests matplotlib scipy seaborn sympy
 
 
 # install jekyll
