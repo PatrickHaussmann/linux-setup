@@ -57,8 +57,8 @@ apt install nodejs
 npm install -g prettier
 
 # install jekyll
-apt install -y ruby-full build-essential
-gem install bundler jekyll
+# apt install -y ruby-full build-essential
+# gem install bundler jekyll
 
 echo """
 github ssh:
