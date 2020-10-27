@@ -56,6 +56,9 @@ apt install nodejs
 # install prettier
 npm install -g prettier
 
+# python3
+apt install python3 python3-pip
+
 # install jekyll
 # apt install -y ruby-full build-essential
 # gem install bundler jekyll
@@ -81,19 +84,5 @@ for x in */; do stow \$x; done
 
 delete default user:
 userdel -r pi
-
-Anaconda (64bit):
-wget https://repo.anaconda.com/archive/Anaconda3-2020.07-Linux-x86_64.sh
-bash Anaconda3-2020.07-Linux-x86_64.sh
-
-Mminiconda (32bit):
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86.sh
-bash Miniconda3-latest-Linux-x86.sh
-
--> Enter
--> q
--> yes
--> /home/patrick/anaconda3
--> no
 
 """ | sudo -u patrick tee /home/patrick/TODO.txt
