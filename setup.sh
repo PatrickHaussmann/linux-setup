@@ -78,6 +78,22 @@ for x in */; do stow -n \$x; done
 # From the dotfiles dir
 for x in */; do stow \$x; done
 
-# todo manual:
-# delete default user (userdel -r pi)
+
+delete default user:
+userdel -r pi
+
+Anaconda:
+wget https://repo.anaconda.com/archive/Anaconda3-2020.07-Linux-x86_64.sh
+bash Anaconda3-2020.07-Linux-x86_64.sh
+
+Mminiconda:
+wget http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-armv7l.sh
+bash Miniconda3-latest-Linux-armv7l.sh
+
+-> Enter
+-> q
+-> yes
+-> /home/patrick/anaconda3
+-> no
+
 """ | sudo -u patrick tee /home/patrick/TODO.txt
