@@ -34,6 +34,9 @@ ufw --force enable
 # create folder
 mkdir github
 
+# github ssh key
+sudo -u patrick ssh-keygen -t rsa -N "" -b 4096 -f /home/patrick/.ssh/github_rsa
+
 # dotfiles
 sudo -u patrick git clone --recursive https://github.com/PatrickHaussmann/dotfiles.git /home/patrick/dotfiles
 sudo -u patrick mv /home/patrick/.bashrc /home/patrick/.bashrc.old
@@ -58,6 +61,12 @@ apt install -y ruby-full build-essential
 gem install bundler jekyll
 
 echo """
+github ssh:
+
+add .ssh/gihub_rsa.pub to github
+
+---------------------------
+
 dotfiles:
 
 # Back up/delete any conflicts, if a system has files in place already. The stow dry run command will produce errors if files would conflict:
@@ -71,5 +80,4 @@ for x in */; do stow \$x; done
 
 # todo manual:
 # delete default user (userdel -r pi)
----------------------------
-""" | sudo -u patrick tee TODO.txt
+""" | sudo -u patrick tee /home/patrick/TODO.txt
