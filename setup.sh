@@ -58,6 +58,7 @@ npm install -g prettier
 
 # python3
 apt install python3 python3-pip
+apt install libatlas-base-dev # dependency for numpy: https://stackoverflow.com/a/50797521
 sudo -u patrick pip3 install numpy pandas requests matplotlib scipy seaborn sympy
 
 
