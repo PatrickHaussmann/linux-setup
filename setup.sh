@@ -3,7 +3,7 @@ cd ~
 # new user
 echo "password for user patrick"
 adduser -q patrick
-apt install sudo
+apt install -y sudo
 usermod -aG sudo patrick
 
 # install basic tools
