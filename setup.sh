@@ -51,7 +51,7 @@ DISTRO="$(lsb_release -s -c)"
 echo "deb https://deb.nodesource.com/$VERSION $DISTRO main" | tee /etc/apt/sources.list.d/nodesource.list
 echo "deb-src https://deb.nodesource.com/$VERSION $DISTRO main" | tee -a /etc/apt/sources.list.d/nodesource.list
 apt update
-apt install nodejs
+apt install -y nodejs
 
 # install prettier
 npm install -g prettier
