@@ -39,7 +39,7 @@ sudo -u patrick ssh-keygen -t rsa -N "" -b 4096 -f /home/patrick/.ssh/github_rsa
 
 # dotfiles
 sudo -u patrick git clone --recursive https://github.com/PatrickHaussmann/dotfiles.git /home/patrick/dotfiles
-mv /home/patrick/.bashrc /home/patrick/.bashrc.old
+sudo -u patrick mv /home/patrick/.bashrc /home/patrick/.bashrc.old
 cd /home/patrick/dotfiles/
 for x in */; do sudo -u patrick stow $x; done
 cd ..
