@@ -64,7 +64,7 @@ sudo -u patrick pip3 install numpy pandas requests matplotlib scipy seaborn symp
 
 # install jekyll
 # apt install -y ruby-full build-essential
-# gem install bundler jekyll
+# gem install bundler jekyll github-pages
 
 echo """
 github ssh:
