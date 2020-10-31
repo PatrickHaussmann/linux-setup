@@ -39,7 +39,7 @@ sudo -u patrick ssh-keygen -t rsa -N "" -b 4096 -f /home/patrick/.ssh/github_rsa
 
 # dotfiles
 sudo -u patrick git clone --recursive https://github.com/PatrickHaussmann/dotfiles.git /home/patrick/dotfiles
-sudo -u patrick mv /home/patrick/.bashrc /home/patrick/.bashrc.old
+mv /home/patrick/.bashrc /home/patrick/.bashrc.old
 cd /home/patrick/dotfiles/
 for x in */; do sudo -u patrick stow $x; done
 cd ..
@@ -57,8 +57,8 @@ apt install nodejs
 npm install -g prettier
 
 # python3
-apt install python3 python3-pip
-apt install libatlas-base-dev # dependency for numpy: https://stackoverflow.com/a/50797521
+apt install -y python3 python3-pip
+apt install -y libatlas-base-dev # dependency for numpy: https://stackoverflow.com/a/50797521
 sudo -u patrick pip3 install numpy pandas requests matplotlib scipy seaborn sympy
 
 
